@@ -9,7 +9,8 @@ resource_group_name = "nomad-cluster-rg"
 storage_account = "nomadvms"
 
 # Terraform variables (all are required)
-retry_join = "provider=azure tag_name=ConsulAutoJoin tag_value=auto-join subscription_id=SUBSCRIPTION_ID tenant_id=TENANT_ID client_id=CLIENT_ID secret_access_key=CLIENT_SECRET"
+# https://developer.hashicorp.com/consul/docs/install/cloud-auto-join#microsoft-azure
+retry_join = "provider=azure tag_name=ConsulAutoJoin tag_value=auto-join subscription_id=ARM_SUBSCRIPTION_ID tenant_id=ARM_TENANT_ID client_id=ARM_CLIENT_ID secret_access_key='ARM_CLIENT_SECRET'"
 
 # Alphanumeric and periods only
 image_name = "IMAGE_FROM_PACKER"
