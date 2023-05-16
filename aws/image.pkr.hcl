@@ -43,7 +43,7 @@ source "amazon-ebs" "hashistack" {
   }
 
   tags = {
-    Name          = "nomad-alb"
+    Name          = "mws-learn-nomad"
     source        = "hashicorp/learn"
     purpose       = "demo"
     OS_Version    = "Ubuntu"
@@ -56,7 +56,7 @@ source "amazon-ebs" "hashistack" {
   }
   
   snapshot_tags = {
-    Name    = "nomad-alb"
+    Name    = "mws-learn-nomad"
     source  = "hashicorp/learn"
     purpose = "demo"
   }
