@@ -6,9 +6,11 @@ examples/
 *.tfstate.backup
 .terraform.lock.hcl
 terraform.tfvars
-# variables.hcl
+variables.hcl
 Vagrantfile
 ignore*
 nomad.token
 *.pem
 azure/variables.hcl
+aws/20230515T232855Z_packer.log
+.gitignore

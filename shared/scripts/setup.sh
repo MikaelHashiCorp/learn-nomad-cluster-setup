@@ -5,53 +5,39 @@ set -e
 # Disable interactive apt prompts
 export DEBIAN_FRONTEND=noninteractive
 
+sudo apt-get update
+sudo apt-get install -y software-properties-common unzip tree redis-tools jq curl tmux awscli ec2-instance-connect 
+sudo apt-get clean
+
 cd /ops
+
+echo "pwd = $(pwd)"
 
 CONFIGDIR=/ops/shared/config
 
-CONSULVERSION=1.11.4
+CONSULVERSION=$(curl -s https://api.releases.hashicorp.com/v1/releases/consul/latest | jq -r '.version')
+echo "== Latest Consul version v${CONSULVERSION} =="
 CONSULDOWNLOAD=https://releases.hashicorp.com/consul/${CONSULVERSION}/consul_${CONSULVERSION}_linux_amd64.zip
 CONSULCONFIGDIR=/etc/consul.d
 CONSULDIR=/opt/consul
 
-VAULTVERSION=1.5.3
-VAULTDOWNLOAD=https://releases.hashicorp.com/vault/${VAULTVERSION}/vault_${VAULTVERSION}_linux_amd64.zip
-VAULTCONFIGDIR=/etc/vault.d
-VAULTDIR=/opt/vault
-
-NOMADVERSION=1.3.3
+NOMADVERSION=$(curl -s https://api.releases.hashicorp.com/v1/releases/nomad/latest | jq -r '.version')
+echo "== Latest Nomad version v${NOMADVERSION} =="
 NOMADDOWNLOAD=https://releases.hashicorp.com/nomad/${NOMADVERSION}/nomad_${NOMADVERSION}_linux_amd64.zip
 NOMADCONFIGDIR=/etc/nomad.d
 NOMADDIR=/opt/nomad
 
-CONSULTEMPLATEVERSION=0.25.1
+VAULTVERSION=$(curl -sS https://api.releases.hashicorp.com/v1/releases/vault/latest | jq -r '.version')
+echo "== Latest Vault version v${VAULTVERSION}=="
+VAULTDOWNLOAD=https://releases.hashicorp.com/vault/${VAULTVERSION}/vault_${VAULTVERSION}_linux_amd64.zip
+VAULTCONFIGDIR=/etc/vault.d
+VAULTDIR=/opt/vault
+
+CONSULTEMPLATEVERSION=$(curl -s https://api.releases.hashicorp.com/v1/releases/consul-template/latest | jq -r '.version')
+echo "== Latest Consul Template version v${CONSULTEMPLATEVERSION}/=="
 CONSULTEMPLATEDOWNLOAD=https://releases.hashicorp.com/consul-template/${CONSULTEMPLATEVERSION}/consul-template_${CONSULTEMPLATEVERSION}_linux_amd64.zip
 CONSULTEMPLATECONFIGDIR=/etc/consul-template.d
 CONSULTEMPLATEDIR=/opt/consul-template
-
-# Dependencies
-case $CLOUD_ENV in
-  aws)
-    sudo apt-get install -y software-properties-common
-    ;;
-
-  gce)
-    sudo apt-get update && sudo apt-get install -y software-properties-common
-    ;;
-
-  azure)
-    sudo apt-get install -y software-properties-common
-    ;;
-
-  *)
-    exit "CLOUD_ENV not set to one of aws, gce, or azure - exiting."
-    ;;
-esac
-
-sudo apt-get update
-sudo apt-get install -y unzip tree redis-tools jq curl tmux
-sudo apt-get clean
-
 
 # Disable the firewall
 
@@ -131,3 +117,10 @@ sudo add-apt-repository -y ppa:openjdk-r/ppa
 sudo apt-get update 
 sudo apt-get install -y openjdk-8-jdk
 JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
+# Set Up Environment Prompt
+echo 'export AWS_DEFAULT_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed "s/.$//")' >> ~/.bashrc
+echo 'export INSTANCE_NAME=$(aws ec2 describe-tags --filters "Name=resource-id,Values=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)" "Name=key,Values=PromptID" --query "Tags[0].Value" --output text --region us-east-1)' >> ~/.bashrc
+echo "alias env=\"env -0 | sort -z | tr '\0' '\n'\"" >> ~/.bashrc
+echo 'PS1="($INSTANCE_NAME)$PS1"' >> ~/.bashrc
+cat ~/.bashrc
