@@ -12,5 +12,6 @@ ignore*
 nomad.token
 *.pem
 azure/variables.hcl
-aws/20230515T232855Z_packer.log
+*.log
+*.txt
 .gitignore

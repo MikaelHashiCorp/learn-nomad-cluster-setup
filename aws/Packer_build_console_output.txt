@@ -1,91 +1,355 @@
-❯ packer build -on-error=ask -var-file=variables.hcl image.pkr.hcl
-
 amazon-ebs.hashistack: output will be in this color.
 
 ==> amazon-ebs.hashistack: Force Deregister flag found, skipping prevalidating AMI Name
     amazon-ebs.hashistack: Found Image ID: ami-0044130ca185d0880
-==> amazon-ebs.hashistack: Creating temporary keypair: packer_6462c5e4-b7c7-ffc7-342c-99271849e442
-==> amazon-ebs.hashistack: Creating temporary security group for this instance: packer_6462c5e6-a790-861a-bf67-1c34882336ff
+==> amazon-ebs.hashistack: Creating temporary keypair: packer_6462e7d2-6251-5668-ccdb-54b4b1cac5f8
+==> amazon-ebs.hashistack: Creating temporary security group for this instance: packer_6462e7d4-aa48-4514-f117-b907c89f0a22
 ==> amazon-ebs.hashistack: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...
 ==> amazon-ebs.hashistack: Launching a source AWS instance...
-    amazon-ebs.hashistack: Instance ID: i-081b464c8319df432
-==> amazon-ebs.hashistack: Waiting for instance (i-081b464c8319df432) to become ready...
-==> amazon-ebs.hashistack: Using SSH communicator to connect: 34.228.113.244
+    amazon-ebs.hashistack: Instance ID: i-0a63d8d962c276e0e
+==> amazon-ebs.hashistack: Waiting for instance (i-0a63d8d962c276e0e) to become ready...
+==> amazon-ebs.hashistack: Using SSH communicator to connect: 3.89.141.112
 ==> amazon-ebs.hashistack: Waiting for SSH to become available...
 ==> amazon-ebs.hashistack: Connected to SSH!
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell2123771207
+==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell922828252
 ==> amazon-ebs.hashistack: Uploading ../shared => /ops
 ==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-==> amazon-ebs.hashistack: /tmp/script_4043.sh: line 12: jq: command not found
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 127. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell2937163901
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
-    amazon-ebs.hashistack: Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
-    amazon-ebs.hashistack: Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
-    amazon-ebs.hashistack: Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
-    amazon-ebs.hashistack: Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
-    amazon-ebs.hashistack: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
-    amazon-ebs.hashistack: Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
-    amazon-ebs.hashistack: Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [605 kB]
-    amazon-ebs.hashistack: Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [169 kB]
-    amazon-ebs.hashistack: Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [14.4 kB]
-    amazon-ebs.hashistack: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [271 kB]
-    amazon-ebs.hashistack: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [41.3 kB]
-    amazon-ebs.hashistack: Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [887 kB]
-    amazon-ebs.hashistack: Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [182 kB]
-    amazon-ebs.hashistack: Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [18.8 kB]
-    amazon-ebs.hashistack: Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [35.3 kB]
-    amazon-ebs.hashistack: Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [8452 B]
-    amazon-ebs.hashistack: Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [468 B]
-    amazon-ebs.hashistack: Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [40.9 kB]
-    amazon-ebs.hashistack: Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [10.2 kB]
-    amazon-ebs.hashistack: Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
-    amazon-ebs.hashistack: Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
-    amazon-ebs.hashistack: Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [22.2 kB]
-    amazon-ebs.hashistack: Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [15.0 kB]
-    amazon-ebs.hashistack: Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [548 B]
-    amazon-ebs.hashistack: Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
-    amazon-ebs.hashistack: Get:30 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [363 kB]
-    amazon-ebs.hashistack: Get:31 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [108 kB]
-    amazon-ebs.hashistack: Get:32 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [9732 B]
-    amazon-ebs.hashistack: Get:33 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [225 kB]
-    amazon-ebs.hashistack: Get:34 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [33.3 kB]
-    amazon-ebs.hashistack: Get:35 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [709 kB]
-    amazon-ebs.hashistack: Get:36 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [122 kB]
-    amazon-ebs.hashistack: Get:37 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [14.3 kB]
-    amazon-ebs.hashistack: Get:38 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [30.2 kB]
-    amazon-ebs.hashistack: Get:39 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [5828 B]
-    amazon-ebs.hashistack: Get:40 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [252 B]
-    amazon-ebs.hashistack: Fetched 24.6 MB in 4s (6403 kB/s)
+    amazon-ebs.hashistack: Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+    amazon-ebs.hashistack: Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+    amazon-ebs.hashistack: Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+    amazon-ebs.hashistack: Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [363 kB]
+    amazon-ebs.hashistack: Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+    amazon-ebs.hashistack: Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+    amazon-ebs.hashistack: Get:7 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [108 kB]
+    amazon-ebs.hashistack: Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [9732 B]
+    amazon-ebs.hashistack: Get:9 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [225 kB]
+    amazon-ebs.hashistack: Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [33.3 kB]
+    amazon-ebs.hashistack: Get:11 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [709 kB]
+    amazon-ebs.hashistack: Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [122 kB]
+    amazon-ebs.hashistack: Get:13 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [14.3 kB]
+    amazon-ebs.hashistack: Get:14 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [30.2 kB]
+    amazon-ebs.hashistack: Get:15 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [5828 B]
+    amazon-ebs.hashistack: Get:16 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [252 B]
+    amazon-ebs.hashistack: Get:17 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+    amazon-ebs.hashistack: Get:18 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+    amazon-ebs.hashistack: Get:19 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+    amazon-ebs.hashistack: Get:20 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+    amazon-ebs.hashistack: Get:21 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+    amazon-ebs.hashistack: Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [605 kB]
+    amazon-ebs.hashistack: Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [169 kB]
+    amazon-ebs.hashistack: Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [14.4 kB]
+    amazon-ebs.hashistack: Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [271 kB]
+    amazon-ebs.hashistack: Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [41.3 kB]
+    amazon-ebs.hashistack: Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [887 kB]
+    amazon-ebs.hashistack: Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [182 kB]
+    amazon-ebs.hashistack: Get:29 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [18.8 kB]
+    amazon-ebs.hashistack: Get:30 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [35.3 kB]
+    amazon-ebs.hashistack: Get:31 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [8452 B]
+    amazon-ebs.hashistack: Get:32 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [468 B]
+    amazon-ebs.hashistack: Get:33 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [40.9 kB]
+    amazon-ebs.hashistack: Get:34 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [10.2 kB]
+    amazon-ebs.hashistack: Get:35 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+    amazon-ebs.hashistack: Get:36 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+    amazon-ebs.hashistack: Get:37 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [22.2 kB]
+    amazon-ebs.hashistack: Get:38 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [15.0 kB]
+    amazon-ebs.hashistack: Get:39 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [548 B]
+    amazon-ebs.hashistack: Get:40 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+    amazon-ebs.hashistack: Fetched 24.6 MB in 6s (4399 kB/s)
     amazon-ebs.hashistack: Reading package lists...
     amazon-ebs.hashistack: Reading package lists...
     amazon-ebs.hashistack: Building dependency tree...
     amazon-ebs.hashistack: Reading state information...
-==> amazon-ebs.hashistack: E: Unable to locate package c2-instance-connect
+    amazon-ebs.hashistack: Package jq is not available, but is referred to by another package.
+==> amazon-ebs.hashistack: E: Unable to locate package tree
+==> amazon-ebs.hashistack: E: Unable to locate package redis-tools
+==> amazon-ebs.hashistack: E: Package 'jq' has no installation candidate
+==> amazon-ebs.hashistack: E: Package 'awscli' has no installation candidate
+    amazon-ebs.hashistack: This may mean that the package is missing, has been obsoleted, or
+    amazon-ebs.hashistack: is only available from another source
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Package awscli is not available, but is referred to by another package.
+    amazon-ebs.hashistack: This may mean that the package is missing, has been obsoleted, or
+    amazon-ebs.hashistack: is only available from another source
+    amazon-ebs.hashistack:
 ==> amazon-ebs.hashistack: Script exited with non-zero exit status: 100. Allowed exit codes are: [0]
 ==> amazon-ebs.hashistack: Step "StepProvision" failed
 ==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell3514390854
+==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell2638718138
 ==> amazon-ebs.hashistack: Uploading ../shared => /ops
 ==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
+    amazon-ebs.hashistack: == apt update ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+    amazon-ebs.hashistack: Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+    amazon-ebs.hashistack: Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1395 kB]
+    amazon-ebs.hashistack: Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main Translation-en [510 kB]
+    amazon-ebs.hashistack: Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 c-n-f Metadata [30.3 kB]
+    amazon-ebs.hashistack: Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [129 kB]
+    amazon-ebs.hashistack: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/restricted Translation-en [18.6 kB]
+    amazon-ebs.hashistack: Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/restricted amd64 c-n-f Metadata [488 B]
+    amazon-ebs.hashistack: Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+    amazon-ebs.hashistack: Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+    amazon-ebs.hashistack: Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+    amazon-ebs.hashistack: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+    amazon-ebs.hashistack: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+    amazon-ebs.hashistack: Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+    amazon-ebs.hashistack: Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [605 kB]
+    amazon-ebs.hashistack: Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [169 kB]
+    amazon-ebs.hashistack: Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [14.4 kB]
+    amazon-ebs.hashistack: Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [271 kB]
+    amazon-ebs.hashistack: Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [41.3 kB]
+    amazon-ebs.hashistack: Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 c-n-f Metadata [604 B]
+    amazon-ebs.hashistack: Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [887 kB]
+    amazon-ebs.hashistack: Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [182 kB]
+    amazon-ebs.hashistack: Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [18.8 kB]
+    amazon-ebs.hashistack: Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [35.3 kB]
+    amazon-ebs.hashistack: Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [8452 B]
+    amazon-ebs.hashistack: Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [468 B]
+    amazon-ebs.hashistack: Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [40.9 kB]
+    amazon-ebs.hashistack: Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [10.2 kB]
+    amazon-ebs.hashistack: Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+    amazon-ebs.hashistack: Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+    amazon-ebs.hashistack: Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [22.2 kB]
+    amazon-ebs.hashistack: Get:34 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [15.0 kB]
+    amazon-ebs.hashistack: Get:35 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [548 B]
+    amazon-ebs.hashistack: Get:36 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+    amazon-ebs.hashistack: Fetched 25.4 MB in 4s (6743 kB/s)
+    amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: 11 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    amazon-ebs.hashistack: == apt upgrade ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: Calculating upgrade...
+    amazon-ebs.hashistack: The following NEW packages will be installed:
+    amazon-ebs.hashistack:   linux-aws-5.19-headers-5.19.0-1025 linux-headers-5.19.0-1025-aws
+    amazon-ebs.hashistack:   linux-image-5.19.0-1025-aws linux-modules-5.19.0-1025-aws
+    amazon-ebs.hashistack: The following packages will be upgraded:
+    amazon-ebs.hashistack:   distro-info-data git git-man libfreetype6 libgssapi-krb5-2 libk5crypto3
+    amazon-ebs.hashistack:   libkrb5-3 libkrb5support0 linux-aws linux-headers-aws linux-image-aws
+    amazon-ebs.hashistack: 11 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+    amazon-ebs.hashistack: 3 standard LTS security updates
+    amazon-ebs.hashistack: Need to get 58.0 MB of archives.
+    amazon-ebs.hashistack: After this operation, 282 MB of additional disk space will be used.
+    amazon-ebs.hashistack: Do you want to continue? [Y/n] Abort.
+==> amazon-ebs.hashistack: Script exited with non-zero exit status: 1. Allowed exit codes are: [0]
+==> amazon-ebs.hashistack: Step "StepProvision" failed
+==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
+==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell821718166
+==> amazon-ebs.hashistack: Uploading ../shared => /ops
+==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
+    amazon-ebs.hashistack: == apt update ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
     amazon-ebs.hashistack: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
     amazon-ebs.hashistack: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+    amazon-ebs.hashistack: Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+    amazon-ebs.hashistack: Fetched 110 kB in 1s (180 kB/s)
     amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: 11 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    amazon-ebs.hashistack: == apt upgrade ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: Calculating upgrade...
+    amazon-ebs.hashistack: The following NEW packages will be installed:
+    amazon-ebs.hashistack:   linux-aws-5.19-headers-5.19.0-1025 linux-headers-5.19.0-1025-aws
+    amazon-ebs.hashistack:   linux-image-5.19.0-1025-aws linux-modules-5.19.0-1025-aws
+    amazon-ebs.hashistack: The following packages will be upgraded:
+    amazon-ebs.hashistack:   distro-info-data git git-man libfreetype6 libgssapi-krb5-2 libk5crypto3
+    amazon-ebs.hashistack:   libkrb5-3 libkrb5support0 linux-aws linux-headers-aws linux-image-aws
+    amazon-ebs.hashistack: 11 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+    amazon-ebs.hashistack: 3 standard LTS security updates
+    amazon-ebs.hashistack: Need to get 58.0 MB of archives.
+    amazon-ebs.hashistack: After this operation, 282 MB of additional disk space will be used.
+    amazon-ebs.hashistack: Do you want to continue? [Y/n] Abort.
+==> amazon-ebs.hashistack: Script exited with non-zero exit status: 1. Allowed exit codes are: [0]
+==> amazon-ebs.hashistack: Step "StepProvision" failed
+==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
+==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell302960284
+==> amazon-ebs.hashistack: Uploading ../shared => /ops
+==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
+    amazon-ebs.hashistack: == apt update ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+    amazon-ebs.hashistack: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    amazon-ebs.hashistack: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
+    amazon-ebs.hashistack: Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+    amazon-ebs.hashistack: Fetched 110 kB in 1s (130 kB/s)
+    amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: 11 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    amazon-ebs.hashistack: == apt upgrade ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: Calculating upgrade...
+    amazon-ebs.hashistack: The following NEW packages will be installed:
+    amazon-ebs.hashistack:   linux-aws-5.19-headers-5.19.0-1025 linux-headers-5.19.0-1025-aws
+    amazon-ebs.hashistack:   linux-image-5.19.0-1025-aws linux-modules-5.19.0-1025-aws
+    amazon-ebs.hashistack: The following packages will be upgraded:
+    amazon-ebs.hashistack:   distro-info-data git git-man libfreetype6 libgssapi-krb5-2 libk5crypto3
+    amazon-ebs.hashistack:   libkrb5-3 libkrb5support0 linux-aws linux-headers-aws linux-image-aws
+    amazon-ebs.hashistack: 11 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+    amazon-ebs.hashistack: 3 standard LTS security updates
+    amazon-ebs.hashistack: Need to get 58.0 MB of archives.
+    amazon-ebs.hashistack: After this operation, 282 MB of additional disk space will be used.
+    amazon-ebs.hashistack: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libk5crypto3 amd64 1.19.2-2ubuntu0.2 [86.3 kB]
+    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libkrb5support0 amd64 1.19.2-2ubuntu0.2 [32.3 kB]
+    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libkrb5-3 amd64 1.19.2-2ubuntu0.2 [357 kB]
+    amazon-ebs.hashistack: Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgssapi-krb5-2 amd64 1.19.2-2ubuntu0.2 [145 kB]
+    amazon-ebs.hashistack: Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 distro-info-data all 0.52ubuntu0.4 [4986 B]
+    amazon-ebs.hashistack: Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git-man all 1:2.34.1-1ubuntu1.9 [954 kB]
+    amazon-ebs.hashistack: Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.9 [3166 kB]
+    amazon-ebs.hashistack: Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfreetype6 amd64 2.11.1+dfsg-1ubuntu0.2 [389 kB]
+    amazon-ebs.hashistack: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-modules-5.19.0-1025-aws amd64 5.19.0-1025.26~22.04.1 [24.8 MB]
+    amazon-ebs.hashistack: Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-image-5.19.0-1025-aws amd64 5.19.0-1025.26~22.04.1 [12.0 MB]
+    amazon-ebs.hashistack: Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-aws amd64 5.19.0.1025.26~22.04.9 [1732 B]
+    amazon-ebs.hashistack: Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-image-aws amd64 5.19.0.1025.26~22.04.9 [2438 B]
+    amazon-ebs.hashistack: Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-aws-5.19-headers-5.19.0-1025 all 5.19.0-1025.26~22.04.1 [12.7 MB]
+    amazon-ebs.hashistack: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-headers-5.19.0-1025-aws amd64 5.19.0-1025.26~22.04.1 [3361 kB]
+    amazon-ebs.hashistack: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-headers-aws amd64 5.19.0.1025.26~22.04.9 [2366 B]
+==> amazon-ebs.hashistack: debconf: unable to initialize frontend: Dialog
+==> amazon-ebs.hashistack: debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+==> amazon-ebs.hashistack: debconf: falling back to frontend: Readline
+==> amazon-ebs.hashistack: debconf: unable to initialize frontend: Readline
+==> amazon-ebs.hashistack: debconf: (This frontend requires a controlling tty.)
+==> amazon-ebs.hashistack: debconf: falling back to frontend: Teletype
+==> amazon-ebs.hashistack: dpkg-preconfigure: unable to re-open stdin:
+    amazon-ebs.hashistack: Fetched 58.0 MB in 1s (45.9 MB/s)
+    amazon-ebs.hashistack: (Reading database ... 64295 files and directories currently installed.)
+    amazon-ebs.hashistack: Preparing to unpack .../libk5crypto3_1.19.2-2ubuntu0.2_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking libk5crypto3:amd64 (1.19.2-2ubuntu0.2) over (1.19.2-2ubuntu0.1) ...
+    amazon-ebs.hashistack: Setting up libk5crypto3:amd64 (1.19.2-2ubuntu0.2) ...
+    amazon-ebs.hashistack: (Reading database ... 64295 files and directories currently installed.)
+    amazon-ebs.hashistack: Preparing to unpack .../libkrb5support0_1.19.2-2ubuntu0.2_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking libkrb5support0:amd64 (1.19.2-2ubuntu0.2) over (1.19.2-2ubuntu0.1) ...
+    amazon-ebs.hashistack: Setting up libkrb5support0:amd64 (1.19.2-2ubuntu0.2) ...
+    amazon-ebs.hashistack: (Reading database ... 64295 files and directories currently installed.)
+    amazon-ebs.hashistack: Preparing to unpack .../libkrb5-3_1.19.2-2ubuntu0.2_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking libkrb5-3:amd64 (1.19.2-2ubuntu0.2) over (1.19.2-2ubuntu0.1) ...
+    amazon-ebs.hashistack: Setting up libkrb5-3:amd64 (1.19.2-2ubuntu0.2) ...
+    amazon-ebs.hashistack: (Reading database ... 64295 files and directories currently installed.)
+    amazon-ebs.hashistack: Preparing to unpack .../libgssapi-krb5-2_1.19.2-2ubuntu0.2_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking libgssapi-krb5-2:amd64 (1.19.2-2ubuntu0.2) over (1.19.2-2ubuntu0.1) ...
+    amazon-ebs.hashistack: Setting up libgssapi-krb5-2:amd64 (1.19.2-2ubuntu0.2) ...
+    amazon-ebs.hashistack: (Reading database ... 64295 files and directories currently installed.)
+    amazon-ebs.hashistack: Preparing to unpack .../00-distro-info-data_0.52ubuntu0.4_all.deb ...
+    amazon-ebs.hashistack: Unpacking distro-info-data (0.52ubuntu0.4) over (0.52ubuntu0.3) ...
+    amazon-ebs.hashistack: Preparing to unpack .../01-git-man_1%3a2.34.1-1ubuntu1.9_all.deb ...
+    amazon-ebs.hashistack: Unpacking git-man (1:2.34.1-1ubuntu1.9) over (1:2.34.1-1ubuntu1.8) ...
+    amazon-ebs.hashistack: Preparing to unpack .../02-git_1%3a2.34.1-1ubuntu1.9_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking git (1:2.34.1-1ubuntu1.9) over (1:2.34.1-1ubuntu1.8) ...
+    amazon-ebs.hashistack: Preparing to unpack .../03-libfreetype6_2.11.1+dfsg-1ubuntu0.2_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking libfreetype6:amd64 (2.11.1+dfsg-1ubuntu0.2) over (2.11.1+dfsg-1ubuntu0.1) ...
+    amazon-ebs.hashistack: Selecting previously unselected package linux-modules-5.19.0-1025-aws.
+    amazon-ebs.hashistack: Preparing to unpack .../04-linux-modules-5.19.0-1025-aws_5.19.0-1025.26~22.04.1_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking linux-modules-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Selecting previously unselected package linux-image-5.19.0-1025-aws.
+    amazon-ebs.hashistack: Preparing to unpack .../05-linux-image-5.19.0-1025-aws_5.19.0-1025.26~22.04.1_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking linux-image-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Preparing to unpack .../06-linux-aws_5.19.0.1025.26~22.04.9_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking linux-aws (5.19.0.1025.26~22.04.9) over (5.19.0.1024.25~22.04.8) ...
+    amazon-ebs.hashistack: Preparing to unpack .../07-linux-image-aws_5.19.0.1025.26~22.04.9_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking linux-image-aws (5.19.0.1025.26~22.04.9) over (5.19.0.1024.25~22.04.8) ...
+    amazon-ebs.hashistack: Selecting previously unselected package linux-aws-5.19-headers-5.19.0-1025.
+    amazon-ebs.hashistack: Preparing to unpack .../08-linux-aws-5.19-headers-5.19.0-1025_5.19.0-1025.26~22.04.1_all.deb ...
+    amazon-ebs.hashistack: Unpacking linux-aws-5.19-headers-5.19.0-1025 (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Selecting previously unselected package linux-headers-5.19.0-1025-aws.
+    amazon-ebs.hashistack: Preparing to unpack .../09-linux-headers-5.19.0-1025-aws_5.19.0-1025.26~22.04.1_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking linux-headers-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Preparing to unpack .../10-linux-headers-aws_5.19.0.1025.26~22.04.9_amd64.deb ...
+    amazon-ebs.hashistack: Unpacking linux-headers-aws (5.19.0.1025.26~22.04.9) over (5.19.0.1024.25~22.04.8) ...
+    amazon-ebs.hashistack: Setting up distro-info-data (0.52ubuntu0.4) ...
+    amazon-ebs.hashistack: Setting up libfreetype6:amd64 (2.11.1+dfsg-1ubuntu0.2) ...
+    amazon-ebs.hashistack: Setting up linux-aws-5.19-headers-5.19.0-1025 (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Setting up git-man (1:2.34.1-1ubuntu1.9) ...
+    amazon-ebs.hashistack: Setting up linux-headers-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Setting up linux-headers-aws (5.19.0.1025.26~22.04.9) ...
+    amazon-ebs.hashistack: Setting up git (1:2.34.1-1ubuntu1.9) ...
+    amazon-ebs.hashistack: Setting up linux-image-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: I: /boot/vmlinuz is now a symlink to vmlinuz-5.19.0-1025-aws
+    amazon-ebs.hashistack: I: /boot/initrd.img is now a symlink to initrd.img-5.19.0-1025-aws
+    amazon-ebs.hashistack: Setting up linux-modules-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: Setting up linux-image-aws (5.19.0.1025.26~22.04.9) ...
+    amazon-ebs.hashistack: Setting up linux-aws (5.19.0.1025.26~22.04.9) ...
+    amazon-ebs.hashistack: Processing triggers for man-db (2.10.2-1) ...
+    amazon-ebs.hashistack: Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+    amazon-ebs.hashistack: Processing triggers for linux-image-5.19.0-1025-aws (5.19.0-1025.26~22.04.1) ...
+    amazon-ebs.hashistack: /etc/kernel/postinst.d/initramfs-tools:
+    amazon-ebs.hashistack: update-initramfs: Generating /boot/initrd.img-5.19.0-1025-aws
+    amazon-ebs.hashistack: /etc/kernel/postinst.d/zz-update-grub:
+    amazon-ebs.hashistack: Sourcing file `/etc/default/grub'
+    amazon-ebs.hashistack: Sourcing file `/etc/default/grub.d/40-force-partuuid.cfg'
+    amazon-ebs.hashistack: Sourcing file `/etc/default/grub.d/50-cloudimg-settings.cfg'
+    amazon-ebs.hashistack: Sourcing file `/etc/default/grub.d/init-select.cfg'
+    amazon-ebs.hashistack: Generating grub configuration file ...
+    amazon-ebs.hashistack: GRUB_FORCE_PARTUUID is set, will attempt initrdless boot
+    amazon-ebs.hashistack: Found linux image: /boot/vmlinuz-5.19.0-1025-aws
+    amazon-ebs.hashistack: Found initrd image: /boot/microcode.cpio /boot/initrd.img-5.19.0-1025-aws
+    amazon-ebs.hashistack: Found linux image: /boot/vmlinuz-5.19.0-1024-aws
+    amazon-ebs.hashistack: Found initrd image: /boot/microcode.cpio /boot/initrd.img-5.19.0-1024-aws
+    amazon-ebs.hashistack: Warning: os-prober will not be executed to detect other bootable partitions.
+    amazon-ebs.hashistack: Systems on them will not be added to the GRUB boot configuration.
+    amazon-ebs.hashistack: Check GRUB_DISABLE_OS_PROBER documentation entry.
+    amazon-ebs.hashistack: done
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Pending kernel upgrade!
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Running kernel version:
+    amazon-ebs.hashistack:   5.19.0-1024-aws
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Diagnostics:
+    amazon-ebs.hashistack:   The currently running kernel version is not the expected kernel version 5.19.0-1025-aws.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Services to be restarted:
+    amazon-ebs.hashistack:  systemctl restart packagekit.service
+    amazon-ebs.hashistack:  systemctl restart ssh.service
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Service restarts being deferred:
+    amazon-ebs.hashistack:  systemctl restart user@1000.service
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: No containers need to be restarted.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: No user sessions are running outdated binaries.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+    amazon-ebs.hashistack: == apt install ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Reading package lists...
     amazon-ebs.hashistack: Building dependency tree...
     amazon-ebs.hashistack: Reading state information...
     amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
     amazon-ebs.hashistack: curl set to manually installed.
     amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
+    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
+    amazon-ebs.hashistack: software-properties-common set to manually installed.
     amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
     amazon-ebs.hashistack: tmux set to manually installed.
     amazon-ebs.hashistack: The following additional packages will be installed:
@@ -141,7 +405,7 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack:   python3-dateutil python3-docutils python3-jmespath python3-olefile
     amazon-ebs.hashistack:   python3-pil python3-pygments python3-roman python3-rsa python3-s3transfer
     amazon-ebs.hashistack:   redis-tools sgml-base tree unzip x11-common xml-core
-    amazon-ebs.hashistack: 0 upgraded, 108 newly installed, 0 to remove and 11 not upgraded.
+    amazon-ebs.hashistack: 0 upgraded, 108 newly installed, 0 to remove and 0 not upgraded.
     amazon-ebs.hashistack: Need to get 47.9 MB of archives.
     amazon-ebs.hashistack: After this operation, 233 MB of additional disk space will be used.
     amazon-ebs.hashistack: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 fonts-droid-fallback all 1:6.0.1r16-1.1build1 [1805 kB]
@@ -259,9 +523,9 @@ amazon-ebs.hashistack: output will be in this color.
 ==> amazon-ebs.hashistack: debconf: (This frontend requires a controlling tty.)
 ==> amazon-ebs.hashistack: debconf: falling back to frontend: Teletype
 ==> amazon-ebs.hashistack: dpkg-preconfigure: unable to re-open stdin:
-    amazon-ebs.hashistack: Fetched 47.9 MB in 1s (59.0 MB/s)
+    amazon-ebs.hashistack: Fetched 47.9 MB in 1s (41.2 MB/s)
     amazon-ebs.hashistack: Selecting previously unselected package fonts-droid-fallback.
-    amazon-ebs.hashistack: (Reading database ... 64295 files and directories currently installed.)
+    amazon-ebs.hashistack: (Reading database ... 93680 files and directories currently installed.)
     amazon-ebs.hashistack: Preparing to unpack .../000-fonts-droid-fallback_1%3a6.0.1r16-1.1build1_all.deb ...
     amazon-ebs.hashistack: Unpacking fonts-droid-fallback (1:6.0.1r16-1.1build1) ...
     amazon-ebs.hashistack: Selecting previously unselected package libgomp1:amd64.
@@ -731,270 +995,61 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: Setting up python3-docutils (0.17.1+dfsg-2) ...
     amazon-ebs.hashistack: Setting up awscli (1.22.34-1) ...
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: Running kernel seems to be up-to-date.
+    amazon-ebs.hashistack: Pending kernel upgrade!
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: No services need to be restarted.
+    amazon-ebs.hashistack: Running kernel version:
+    amazon-ebs.hashistack:   5.19.0-1024-aws
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Diagnostics:
+    amazon-ebs.hashistack:   The currently running kernel version is not the expected kernel version 5.19.0-1025-aws.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Services to be restarted:
+    amazon-ebs.hashistack:  systemctl restart packagekit.service
+    amazon-ebs.hashistack:  systemctl restart ssh.service
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Service restarts being deferred:
+    amazon-ebs.hashistack:  systemctl restart user@1000.service
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No containers need to be restarted.
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No user sessions are running outdated binaries.
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No VM guests are running outdated hypervisor (qemu) binaries on this host.
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell267462002
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (333 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-==> amazon-ebs.hashistack: E: Unable to locate package c2-instance-connect
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 100. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell3000241
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (390 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: software-properties-common set to manually installed.
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+    amazon-ebs.hashistack: == apt clean ==
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: pwd = /ops
-==> amazon-ebs.hashistack: /tmp/script_7590.sh: line 19: CONSULVERSION: command not found
-    amazon-ebs.hashistack: == Download Consul v ==
-==> amazon-ebs.hashistack: /tmp/script_7590.sh: line 25: NOMADVERSION: command not found
-    amazon-ebs.hashistack: == Download Nomad v ==
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell2844051457
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (410 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
-    amazon-ebs.hashistack: pwd = /ops
-    amazon-ebs.hashistack: == Download Consul v{1.15.2} ==
-    amazon-ebs.hashistack: == Download Nomad v1.5.5 ==
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell170937436
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (360 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
-    amazon-ebs.hashistack: pwd = /ops
-    amazon-ebs.hashistack: == Download Consul v1.15.2==
-    amazon-ebs.hashistack: == Download Nomad v1.5.5 ==
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r 
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell3453004201
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (298 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
-    amazon-ebs.hashistack: pwd = /ops
-    amazon-ebs.hashistack: == Download Consul v1.15.2 ==
-    amazon-ebs.hashistack: == Download Nomad v1.5.5 ==
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell1413907948
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (360 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
-    amazon-ebs.hashistack: pwd = /ops
-    amazon-ebs.hashistack: == Download Consul v1.15.2 ==
-    amazon-ebs.hashistack: == Download Nomad v1.5.5 ==
-    amazon-ebs.hashistack: NOMADDOWNLOAD URL= https://releases.hashicorp.com/nomad/1.5.5/nomad_1.5.5_linux_amd64.zip
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell938297573
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (353 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
-    amazon-ebs.hashistack: pwd = /ops
-    amazon-ebs.hashistack: == Download Consul v1.15.2 ==
-    amazon-ebs.hashistack: == Download Nomad v1.5.5 ==
-    amazon-ebs.hashistack: NOMADDOWNLOAD URL= https://releases.hashicorp.com/nomad/1.5.5/nomad_1.5.5_linux_amd64.zip
-    amazon-ebs.hashistack: == Get Vault Version ==
-==> amazon-ebs.hashistack: jq: error (at <stdin>:1): Cannot index number with string "current_version"
-==> amazon-ebs.hashistack: parse error: Invalid numeric literal at line 1, column 9
-==> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
-==> amazon-ebs.hashistack: Step "StepProvision" failed
-==> amazon-ebs.hashistack: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)? r
-==> amazon-ebs.hashistack: Provisioning with shell script: /Users/mikael/tmp/packer-shell1096250980
-==> amazon-ebs.hashistack: Uploading ../shared => /ops
-==> amazon-ebs.hashistack: Provisioning with shell script: ../shared/scripts/setup.sh
-    amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
-    amazon-ebs.hashistack: Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (322 kB/s)
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Reading package lists...
-    amazon-ebs.hashistack: Building dependency tree...
-    amazon-ebs.hashistack: Reading state information...
-    amazon-ebs.hashistack: jq is already the newest version (1.6-2.1ubuntu3).
-    amazon-ebs.hashistack: awscli is already the newest version (1.22.34-1).
-    amazon-ebs.hashistack: redis-tools is already the newest version (5:6.0.16-1ubuntu1).
-    amazon-ebs.hashistack: tree is already the newest version (2.0.2-1).
-    amazon-ebs.hashistack: curl is already the newest version (7.81.0-1ubuntu1.10).
-    amazon-ebs.hashistack: ec2-instance-connect is already the newest version (1.1.14-0ubuntu1.1).
-    amazon-ebs.hashistack: software-properties-common is already the newest version (0.99.22.6).
-    amazon-ebs.hashistack: tmux is already the newest version (3.2a-4ubuntu0.2).
-    amazon-ebs.hashistack: unzip is already the newest version (6.0-26ubuntu3.1).
-    amazon-ebs.hashistack: 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
-    amazon-ebs.hashistack: pwd = /ops
-    amazon-ebs.hashistack: == Download Consul v1.15.2 ==
-    amazon-ebs.hashistack: == Download Nomad v1.5.5 ==
-    amazon-ebs.hashistack: == Download Vault v1.13.2==
-    amazon-ebs.hashistack: == Download Consul Template v0.31.0/==
+    amazon-ebs.hashistack: == Latest Consul version v1.15.2 ==
+    amazon-ebs.hashistack: == Latest Nomad version v1.5.5 ==
+    amazon-ebs.hashistack: == Latest Vault version v1.13.2==
+    amazon-ebs.hashistack: == Latest Consul Template version v0.31.0/==
     amazon-ebs.hashistack: Firewall stopped and disabled on system startup
 ==> amazon-ebs.hashistack:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 ==> amazon-ebs.hashistack:                                  Dload  Upload   Total   Spent    Left  Speed
-==> amazon-ebs.hashistack: 100 50.3M  100 50.3M    0     0   115M      0 --:--:-- --:--:-- --:--:--  115M
+==> amazon-ebs.hashistack: 100 50.3M  100 50.3M    0     0   166M      0 --:--:-- --:--:-- --:--:--  166M
     amazon-ebs.hashistack: Archive:  consul.zip
     amazon-ebs.hashistack:   inflating: /usr/local/bin/consul
 ==> amazon-ebs.hashistack:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 ==> amazon-ebs.hashistack:                                  Dload  Upload   Total   Spent    Left  Speed
-==> amazon-ebs.hashistack: 100 46.2M  100 46.2M    0     0   165M      0 --:--:-- --:--:-- --:--:--  165M
+==> amazon-ebs.hashistack: 100 46.2M  100 46.2M    0     0   159M      0 --:--:-- --:--:-- --:--:--  159M
     amazon-ebs.hashistack: Archive:  vault.zip
     amazon-ebs.hashistack:   inflating: /usr/local/bin/vault
 ==> amazon-ebs.hashistack:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 ==> amazon-ebs.hashistack:                                  Dload  Upload   Total   Spent    Left  Speed
-==> amazon-ebs.hashistack: 100 41.1M  100 41.1M    0     0   127M      0 --:--:-- --:--:-- --:--:--  127M
+==> amazon-ebs.hashistack: 100 41.1M  100 41.1M    0     0   166M      0 --:--:-- --:--:-- --:--:--  166M
     amazon-ebs.hashistack: Archive:  nomad.zip
     amazon-ebs.hashistack:   inflating: /usr/local/bin/nomad
 ==> amazon-ebs.hashistack:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 ==> amazon-ebs.hashistack:                                  Dload  Upload   Total   Spent    Left  Speed
-==> amazon-ebs.hashistack: 100 5741k  100 5741k    0     0  47.1M      0 --:--:-- --:--:-- --:--:-- 47.5M
+==> amazon-ebs.hashistack: 100 5741k  100 5741k    0     0  49.6M      0 --:--:-- --:--:-- --:--:-- 50.0M
     amazon-ebs.hashistack: Archive:  consul-template.zip
     amazon-ebs.hashistack:   inflating: /usr/local/bin/consul-template
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Reading package lists...
     amazon-ebs.hashistack: Building dependency tree...
     amazon-ebs.hashistack: Reading state information...
@@ -1002,7 +1057,7 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: ca-certificates set to manually installed.
     amazon-ebs.hashistack: The following NEW packages will be installed:
     amazon-ebs.hashistack:   apt-transport-https gnupg2
-    amazon-ebs.hashistack: 0 upgraded, 2 newly installed, 0 to remove and 11 not upgraded.
+    amazon-ebs.hashistack: 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
     amazon-ebs.hashistack: Need to get 7058 B of archives.
     amazon-ebs.hashistack: After this operation, 221 kB of additional disk space will be used.
     amazon-ebs.hashistack: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.9 [1510 B]
@@ -1014,9 +1069,9 @@ amazon-ebs.hashistack: output will be in this color.
 ==> amazon-ebs.hashistack: debconf: (This frontend requires a controlling tty.)
 ==> amazon-ebs.hashistack: debconf: falling back to frontend: Teletype
 ==> amazon-ebs.hashistack: dpkg-preconfigure: unable to re-open stdin:
-    amazon-ebs.hashistack: Fetched 7058 B in 0s (380 kB/s)
+    amazon-ebs.hashistack: Fetched 7058 B in 0s (223 kB/s)
     amazon-ebs.hashistack: Selecting previously unselected package apt-transport-https.
-    amazon-ebs.hashistack: (Reading database ... 75925 files and directories currently installed.)
+    amazon-ebs.hashistack: (Reading database ... 105310 files and directories currently installed.)
     amazon-ebs.hashistack: Preparing to unpack .../apt-transport-https_2.4.9_all.deb ...
     amazon-ebs.hashistack: Unpacking apt-transport-https (2.4.9) ...
     amazon-ebs.hashistack: Selecting previously unselected package gnupg2.
@@ -1026,9 +1081,22 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: Setting up apt-transport-https (2.4.9) ...
     amazon-ebs.hashistack: Processing triggers for man-db (2.10.2-1) ...
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: Running kernel seems to be up-to-date.
+    amazon-ebs.hashistack: Pending kernel upgrade!
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: No services need to be restarted.
+    amazon-ebs.hashistack: Running kernel version:
+    amazon-ebs.hashistack:   5.19.0-1024-aws
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Diagnostics:
+    amazon-ebs.hashistack:   The currently running kernel version is not the expected kernel version 5.19.0-1025-aws.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Services to be restarted:
+    amazon-ebs.hashistack:  systemctl restart packagekit.service
+    amazon-ebs.hashistack:  systemctl restart ssh.service
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Service restarts being deferred:
+    amazon-ebs.hashistack:  systemctl restart user@1000.service
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No containers need to be restarted.
     amazon-ebs.hashistack:
@@ -1038,12 +1106,12 @@ amazon-ebs.hashistack: output will be in this color.
 ==> amazon-ebs.hashistack: Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
     amazon-ebs.hashistack: OK
     amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+    amazon-ebs.hashistack: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    amazon-ebs.hashistack: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
     amazon-ebs.hashistack: Get:4 https://download.docker.com/linux/ubuntu jammy InRelease [48.9 kB]
-    amazon-ebs.hashistack: Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+    amazon-ebs.hashistack: Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
     amazon-ebs.hashistack: Get:6 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages [17.5 kB]
-    amazon-ebs.hashistack: Fetched 293 kB in 1s (420 kB/s)
+    amazon-ebs.hashistack: Fetched 177 kB in 1s (251 kB/s)
     amazon-ebs.hashistack: Reading package lists...
 ==> amazon-ebs.hashistack: W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
     amazon-ebs.hashistack: Repository: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable'
@@ -1053,14 +1121,23 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: Adding repository.
     amazon-ebs.hashistack: Adding deb entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
     amazon-ebs.hashistack: Adding disabled deb-src entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+    amazon-ebs.hashistack: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    amazon-ebs.hashistack: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
     amazon-ebs.hashistack: Hit:4 https://download.docker.com/linux/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (333 kB/s)
+    amazon-ebs.hashistack: Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+    amazon-ebs.hashistack: Fetched 110 kB in 1s (157 kB/s)
     amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: All packages are up to date.
 ==> amazon-ebs.hashistack: W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Reading package lists...
     amazon-ebs.hashistack: Building dependency tree...
     amazon-ebs.hashistack: Reading state information...
@@ -1072,7 +1149,7 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: The following NEW packages will be installed:
     amazon-ebs.hashistack:   containerd.io docker-buildx-plugin docker-ce docker-ce-cli
     amazon-ebs.hashistack:   docker-ce-rootless-extras docker-compose-plugin libslirp0 pigz slirp4netns
-    amazon-ebs.hashistack: 0 upgraded, 9 newly installed, 0 to remove and 11 not upgraded.
+    amazon-ebs.hashistack: 0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
     amazon-ebs.hashistack: Need to get 109 MB of archives.
     amazon-ebs.hashistack: After this operation, 395 MB of additional disk space will be used.
     amazon-ebs.hashistack: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 pigz amd64 2.6-1 [63.6 kB]
@@ -1091,9 +1168,9 @@ amazon-ebs.hashistack: output will be in this color.
 ==> amazon-ebs.hashistack: debconf: (This frontend requires a controlling tty.)
 ==> amazon-ebs.hashistack: debconf: falling back to frontend: Teletype
 ==> amazon-ebs.hashistack: dpkg-preconfigure: unable to re-open stdin:
-    amazon-ebs.hashistack: Fetched 109 MB in 1s (77.1 MB/s)
+    amazon-ebs.hashistack: Fetched 109 MB in 2s (47.8 MB/s)
     amazon-ebs.hashistack: Selecting previously unselected package pigz.
-    amazon-ebs.hashistack: (Reading database ... 75935 files and directories currently installed.)
+    amazon-ebs.hashistack: (Reading database ... 105320 files and directories currently installed.)
     amazon-ebs.hashistack: Preparing to unpack .../0-pigz_2.6-1_amd64.deb ...
     amazon-ebs.hashistack: Unpacking pigz (2.6-1) ...
     amazon-ebs.hashistack: Selecting previously unselected package containerd.io.
@@ -1135,9 +1212,22 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: Processing triggers for man-db (2.10.2-1) ...
     amazon-ebs.hashistack: Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: Running kernel seems to be up-to-date.
+    amazon-ebs.hashistack: Pending kernel upgrade!
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: No services need to be restarted.
+    amazon-ebs.hashistack: Running kernel version:
+    amazon-ebs.hashistack:   5.19.0-1024-aws
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Diagnostics:
+    amazon-ebs.hashistack:   The currently running kernel version is not the expected kernel version 5.19.0-1025-aws.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Services to be restarted:
+    amazon-ebs.hashistack:  systemctl restart packagekit.service
+    amazon-ebs.hashistack:  systemctl restart ssh.service
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Service restarts being deferred:
+    amazon-ebs.hashistack:  systemctl restart user@1000.service
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No containers need to be restarted.
     amazon-ebs.hashistack:
@@ -1145,32 +1235,41 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No VM guests are running outdated hypervisor (qemu) binaries on this host.
     amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+    amazon-ebs.hashistack: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    amazon-ebs.hashistack: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
     amazon-ebs.hashistack: Hit:4 https://download.docker.com/linux/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+    amazon-ebs.hashistack: Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
     amazon-ebs.hashistack: Get:6 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease [23.8 kB]
     amazon-ebs.hashistack: Get:7 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy/main amd64 Packages [4372 B]
     amazon-ebs.hashistack: Get:8 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy/main Translation-en [1060 B]
-    amazon-ebs.hashistack: Fetched 256 kB in 1s (172 kB/s)
+    amazon-ebs.hashistack: Fetched 140 kB in 1s (93.3 kB/s)
     amazon-ebs.hashistack: Reading package lists...
+==> amazon-ebs.hashistack: W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
     amazon-ebs.hashistack: PPA publishes dbgsym, you may need to include 'main/debug' component
     amazon-ebs.hashistack: Repository: 'deb https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu/ jammy main'
-==> amazon-ebs.hashistack: W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
     amazon-ebs.hashistack: More info: https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa
     amazon-ebs.hashistack: Adding repository.
     amazon-ebs.hashistack: Adding deb entry to /etc/apt/sources.list.d/openjdk-r-ubuntu-ppa-jammy.list
     amazon-ebs.hashistack: Adding disabled deb-src entry to /etc/apt/sources.list.d/openjdk-r-ubuntu-ppa-jammy.list
     amazon-ebs.hashistack: Adding key to /etc/apt/trusted.gpg.d/openjdk-r-ubuntu-ppa.gpg with fingerprint DA1A4A13543B466853BAF164EB9B1D8886F44E2A
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
-    amazon-ebs.hashistack: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+    amazon-ebs.hashistack: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    amazon-ebs.hashistack: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
     amazon-ebs.hashistack: Hit:4 https://download.docker.com/linux/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+    amazon-ebs.hashistack: Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
     amazon-ebs.hashistack: Hit:6 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
-    amazon-ebs.hashistack: Fetched 226 kB in 1s (268 kB/s)
-==> amazon-ebs.hashistack: W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+    amazon-ebs.hashistack: Fetched 110 kB in 1s (129 kB/s)
     amazon-ebs.hashistack: Reading package lists...
+    amazon-ebs.hashistack: Building dependency tree...
+    amazon-ebs.hashistack: Reading state information...
+    amazon-ebs.hashistack: All packages are up to date.
+==> amazon-ebs.hashistack: W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+==> amazon-ebs.hashistack:
+==> amazon-ebs.hashistack: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> amazon-ebs.hashistack:
     amazon-ebs.hashistack: Reading package lists...
     amazon-ebs.hashistack: Building dependency tree...
     amazon-ebs.hashistack: Reading state information...
@@ -1224,7 +1323,7 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack:   openjdk-8-jdk openjdk-8-jdk-headless openjdk-8-jre openjdk-8-jre-headless
     amazon-ebs.hashistack:   session-migration ubuntu-mono x11-utils x11proto-dev xorg-sgml-doctools
     amazon-ebs.hashistack:   xtrans-dev
-    amazon-ebs.hashistack: 0 upgraded, 100 newly installed, 0 to remove and 11 not upgraded.
+    amazon-ebs.hashistack: 0 upgraded, 100 newly installed, 0 to remove and 0 not upgraded.
     amazon-ebs.hashistack: Need to get 99.9 MB of archives.
     amazon-ebs.hashistack: After this operation, 390 MB of additional disk space will be used.
     amazon-ebs.hashistack: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgdk-pixbuf2.0-common all 2.42.8+dfsg-1ubuntu0.2 [5530 B]
@@ -1334,9 +1433,9 @@ amazon-ebs.hashistack: output will be in this color.
 ==> amazon-ebs.hashistack: debconf: (This frontend requires a controlling tty.)
 ==> amazon-ebs.hashistack: debconf: falling back to frontend: Teletype
 ==> amazon-ebs.hashistack: dpkg-preconfigure: unable to re-open stdin:
-    amazon-ebs.hashistack: Fetched 99.9 MB in 2s (41.4 MB/s)
+    amazon-ebs.hashistack: Fetched 99.9 MB in 3s (34.3 MB/s)
     amazon-ebs.hashistack: Selecting previously unselected package libgdk-pixbuf2.0-common.
-    amazon-ebs.hashistack: (Reading database ... 76197 files and directories currently installed.)
+    amazon-ebs.hashistack: (Reading database ... 105582 files and directories currently installed.)
     amazon-ebs.hashistack: Preparing to unpack .../00-libgdk-pixbuf2.0-common_2.42.8+dfsg-1ubuntu0.2_all.deb ...
     amazon-ebs.hashistack: Unpacking libgdk-pixbuf2.0-common (2.42.8+dfsg-1ubuntu0.2) ...
     amazon-ebs.hashistack: Selecting previously unselected package libgdk-pixbuf-2.0-0:amd64.
@@ -1924,9 +2023,22 @@ amazon-ebs.hashistack: output will be in this color.
     amazon-ebs.hashistack: Setting up libxt-dev:amd64 (1:1.2.1-1) ...
     amazon-ebs.hashistack: Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.8+dfsg-1ubuntu0.2) ...
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: Running kernel seems to be up-to-date.
+    amazon-ebs.hashistack: Pending kernel upgrade!
     amazon-ebs.hashistack:
-    amazon-ebs.hashistack: No services need to be restarted.
+    amazon-ebs.hashistack: Running kernel version:
+    amazon-ebs.hashistack:   5.19.0-1024-aws
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Diagnostics:
+    amazon-ebs.hashistack:   The currently running kernel version is not the expected kernel version 5.19.0-1025-aws.
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Services to be restarted:
+    amazon-ebs.hashistack:  systemctl restart packagekit.service
+    amazon-ebs.hashistack:  systemctl restart ssh.service
+    amazon-ebs.hashistack:
+    amazon-ebs.hashistack: Service restarts being deferred:
+    amazon-ebs.hashistack:  systemctl restart user@1000.service
     amazon-ebs.hashistack:
     amazon-ebs.hashistack: No containers need to be restarted.
     amazon-ebs.hashistack:
@@ -2057,37 +2169,38 @@ amazon-ebs.hashistack: output will be in this color.
 ==> amazon-ebs.hashistack: Stopping the source instance...
     amazon-ebs.hashistack: Stopping instance
 ==> amazon-ebs.hashistack: Waiting for the instance to stop...
-==> amazon-ebs.hashistack: Creating AMI mws-learn-nomad-20230515235308 from instance i-081b464c8319df432
-    amazon-ebs.hashistack: AMI: ami-0b36cc2ad58fe709b
+==> amazon-ebs.hashistack: Creating AMI mws-learn-nomad-20230516021754 from instance i-0a63d8d962c276e0e
+    amazon-ebs.hashistack: AMI: ami-0e1014aa361687d26
 ==> amazon-ebs.hashistack: Waiting for AMI to become ready...
 ==> amazon-ebs.hashistack: Skipping Enable AMI deprecation...
-==> amazon-ebs.hashistack: Adding tags to AMI (ami-0b36cc2ad58fe709b)...
-==> amazon-ebs.hashistack: Tagging snapshot: snap-077f116fa6938e15f
+==> amazon-ebs.hashistack: Adding tags to AMI (ami-0e1014aa361687d26)...
+==> amazon-ebs.hashistack: Tagging snapshot: snap-0cad2d999700f466b
 ==> amazon-ebs.hashistack: Creating AMI tags
-    amazon-ebs.hashistack: Adding tag: "Name": "nomad-alb"
-    amazon-ebs.hashistack: Adding tag: "purpose": "demo"
+    amazon-ebs.hashistack: Adding tag: "Consul_Version": "1.15.2"
     amazon-ebs.hashistack: Adding tag: "source": "hashicorp/learn"
     amazon-ebs.hashistack: Adding tag: "Base_AMI_ID": "ami-0044130ca185d0880"
-    amazon-ebs.hashistack: Adding tag: "Base_AMI_Name": "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230428"
-    amazon-ebs.hashistack: Adding tag: "Consul_Version": "1.15.2"
     amazon-ebs.hashistack: Adding tag: "Nomad_Version": "1.5.5"
+    amazon-ebs.hashistack: Adding tag: "Base_AMI_Name": "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230428"
     amazon-ebs.hashistack: Adding tag: "OS_Version": "Ubuntu"
     amazon-ebs.hashistack: Adding tag: "Release": "22.04"
+    amazon-ebs.hashistack: Adding tag: "Name": "mws-learn-nomad"
+    amazon-ebs.hashistack: Adding tag: "Vault_Version": "1.13.2"
+    amazon-ebs.hashistack: Adding tag: "purpose": "demo"
 ==> amazon-ebs.hashistack: Creating snapshot tags
-    amazon-ebs.hashistack: Adding tag: "Name": "nomad-alb"
     amazon-ebs.hashistack: Adding tag: "purpose": "demo"
     amazon-ebs.hashistack: Adding tag: "source": "hashicorp/learn"
+    amazon-ebs.hashistack: Adding tag: "Name": "mws-learn-nomad"
 ==> amazon-ebs.hashistack: Provisioning step had errors: Running the cleanup provisioner, if present...
 ==> amazon-ebs.hashistack: Terminating the source AWS instance...
 ==> amazon-ebs.hashistack: Cleaning up any extra volumes...
 ==> amazon-ebs.hashistack: No volumes to clean up, skipping
 ==> amazon-ebs.hashistack: Deleting temporary security group...
 ==> amazon-ebs.hashistack: Deleting temporary keypair...
-Build 'amazon-ebs.hashistack' errored after 50 minutes 54 seconds: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
+Build 'amazon-ebs.hashistack' errored after 15 minutes 36 seconds: Script exited with non-zero exit status: 1. Allowed exit codes are: [0]
 
-==> Wait completed after 50 minutes 54 seconds
+==> Wait completed after 15 minutes 36 seconds
 
 ==> Some builds didn't complete successfully and had errors:
---> amazon-ebs.hashistack: Script exited with non-zero exit status: 4. Allowed exit codes are: [0]
+--> amazon-ebs.hashistack: Script exited with non-zero exit status: 1. Allowed exit codes are: [0]
 
 ==> Builds finished but no artifacts were created.

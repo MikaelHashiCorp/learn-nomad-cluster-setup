@@ -2,12 +2,20 @@
 
 set -e
 
-# Disable interactive apt prompts
+# Disable interactive apt-get prompts
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt-get update
-sudo apt-get install -y software-properties-common unzip tree redis-tools jq curl tmux awscli ec2-instance-connect 
+echo "== add-apt-repository universe =="
+sudo add-apt-repository universe
+echo "== apt-get update ==" 
+sudo apt-get update 
+echo "== apt-get upgrade ==" 
+sudo apt-get upgrade -y
+echo "== apt-get install =="
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common unzip tree redis-tools jq curl tmux ec2-instance-connect ca-certificates gnupg2
+echo "== apt-get clean =="
 sudo apt-get clean
+echo "== end of apt-get =="
 
 cd /ops
 
@@ -106,17 +114,22 @@ sudo chmod 755 $CONSULTEMPLATEDIR
 
 # Docker
 distro=$(lsb_release -si | tr '[:upper:]' '[:lower:]')
-sudo apt-get install -y apt-transport-https ca-certificates gnupg2 
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/${distro} $(lsb_release -cs) stable"
 sudo apt-get update
-sudo apt-get install -y docker-ce
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-ce
 
 # Java
 sudo add-apt-repository -y ppa:openjdk-r/ppa
 sudo apt-get update 
-sudo apt-get install -y openjdk-8-jdk
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jdk
 JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
+# AWSCLI
+echo "== Install AWSCLI =="
+curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 # Set Up Environment Prompt
 echo 'export AWS_DEFAULT_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed "s/.$//")' >> ~/.bashrc
